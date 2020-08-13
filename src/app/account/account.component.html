@@ -1,1 +1,7 @@
 <p>account works!</p>
+<div *ngIf="this.authService.isLoggedIn">
+  <p>Username: {{this.authService.getUsername()}}</p>
+  <p>Email: {{this.authService.getEmail()}}</p>
+</div>
+{{loggedInStill}}
+{{this.authService.isLoggedIn}}
