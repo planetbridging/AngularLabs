@@ -2,6 +2,14 @@
 <div *ngIf="this.authService.isLoggedIn">
   <p>Username: {{this.authService.getUsername()}}</p>
   <p>Email: {{this.authService.getEmail()}}</p>
+
+  <form class="form-signin" (submit)="changeEmail($event)">
+        <h1 class="h3 mb-3 font-weight-normal">Change email</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="email" class="form-control" placeholder="Email address" value="{{this.authService.getEmail()}}" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save settings</button>
+      </form>
+
 </div>
 {{loggedInStill}}
 {{this.authService.isLoggedIn}}

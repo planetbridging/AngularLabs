@@ -58,6 +58,21 @@ export class AuthService {
       }
     }
   }
+
+  changeEmail(email){
+    if(typeof(Storage) !== "undefined"){
+      var un = localStorage.getItem("username");
+      var pwd = localStorage.getItem("password");
+      for (var i = 0; i < this.userArray.length; i++) {
+        if(un == this.userArray[i].getUsername() &&
+          pwd == this.userArray[i].getPassword()){
+            this.userArray[i].setEmail(email);
+            localStorage.setItem("email", email);
+        }
+      }
+    }
+  }
+
   logOut(){
     console.log("logged in session destroyed... how could you :(");
     localStorage.clear();

@@ -17,6 +17,8 @@ export class account {
     this.vaild    = v;
   }
 
+  setEmail(email){this.email = email;};
+
   getUsername(){ return this.username;}
   getBirthdate(){ return this.birthdate;}
   getAge(){ return this.age;}
